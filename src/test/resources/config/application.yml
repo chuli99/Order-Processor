@@ -13,9 +13,19 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+  client:
+    enabled: false
+  instance:
+    appname: OrderProcessor
+    instanceId: OrderProcessor:${spring.application.instance-id:${random.value}}
+
 spring:
   application:
     name: OrderProcessor
+  cloud:
+    config:
+      enabled: false
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -26,6 +36,9 @@ spring:
     host: localhost
   main:
     allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   messages:
     basename: i18n/messages
   task:
@@ -64,15 +77,14 @@ jhipster:
       enabled: false
       host: localhost
       port: 5000
-      ring-buffer-size: 512
+      queue-size: 512
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NWRmMWVkNDhlZTc5ZWQ3NDdjOGJjOGUyMWY5ODM4OTNmMzU2YjNlNzc4MjY4N2UyM2I4ZTY4YWNhZDUwZGM0ODhhMzIzNmEzMjA4MjY0MTBlYzgwNDA0MGQ5YzUxZTE3ODY0YTdjN2Y5NGEwNjYxOTIwODE1NzRjOTFjZGUxNDg=
+        base64-secret: ODZiNzU0MTM1NzEwZDMwMTEwZWRkYjlhZmFhYmY1MmIxZDljYzQ4NTZiZDI4MWMyOGYyNDhmM2Q1YjQzMTM2NTNhZjZmNmI0NDg4OTlmZmNkYzVlNWRkMTAwMTY0MWI3NDRiNGJmMDFhZTUwNzRjY2ZhMDc0ZjI5OGFjZTU0OWQ=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
-        token-validity-in-seconds-for-remember-me: 86400
 
 # ===================================================================
 # Application specific properties

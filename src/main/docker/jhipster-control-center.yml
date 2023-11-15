@@ -28,7 +28,7 @@
 # - In Consul mode, the ports are in the consul.yml file.
 # - In Eureka mode, the ports are in the jhipster-registry.yml file.
 
-name: orderprocessor
+version: '3.8'
 services:
   jhipster-control-center:
     image: 'jhipster/jhipster-control-center:v0.5.0'
@@ -39,11 +39,12 @@ services:
       - echo "`ip route | grep default | cut -d ' ' -f3` host.docker.internal" | tee -a /etc/hosts > /dev/null && java -jar /jhipster-control-center.jar
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs,static
+      - SPRING_PROFILES_ACTIVE=prod,api-docs,true
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
       - SPRING_SECURITY_USER_PASSWORD=admin
       # The token should have the same value than the one declared in you Spring configuration under the jhipster.security.authentication.jwt.base64-secret configuration's entry
-      - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=NWRmMWVkNDhlZTc5ZWQ3NDdjOGJjOGUyMWY5ODM4OTNmMzU2YjNlNzc4MjY4N2UyM2I4ZTY4YWNhZDUwZGM0ODhhMzIzNmEzMjA4MjY0MTBlYzgwNDA0MGQ5YzUxZTE3ODY0YTdjN2Y5NGEwNjYxOTIwODE1NzRjOTFjZGUxNDg=
-      - SPRING_CLOUD_DISCOVERY_CLIENT_SIMPLE_INSTANCES_ORDERPROCESSOR_0_URI=http://host.docker.internal:8080
+      - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=ODZiNzU0MTM1NzEwZDMwMTEwZWRkYjlhZmFhYmY1MmIxZDljYzQ4NTZiZDI4MWMyOGYyNDhmM2Q1YjQzMTM2NTNhZjZmNmI0NDg4OTlmZmNkYzVlNWRkMTAwMTY0MWI3NDRiNGJmMDFhZTUwNzRjY2ZhMDc0ZjI5OGFjZTU0OWQ=
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@host.docker.internal:8761/eureka/
       - LOGGING_FILE_NAME=/tmp/jhipster-control-center.log
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix

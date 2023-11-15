@@ -3,8 +3,6 @@ import axios from 'axios';
 import thunk from 'redux-thunk';
 import sinon from 'sinon';
 
-import { defaultValue } from 'app/shared/model/user.model';
-import { AUTHORITIES } from 'app/config/constants';
 import userManagement, {
   getUsers,
   getUsersAsAdmin,
@@ -15,6 +13,8 @@ import userManagement, {
   deleteUser,
   reset,
 } from './user-management.reducer';
+import { defaultValue } from 'app/shared/model/user.model';
+import { AUTHORITIES } from 'app/config/constants';
 
 describe('User management reducer tests', () => {
   const username = process.env.E2E_USERNAME ?? 'admin';
@@ -99,7 +99,7 @@ describe('User management reducer tests', () => {
             errorMessage: 'error happened',
           });
         },
-        { message: 'error happened' },
+        { message: 'error happened' }
       );
     });
   });
