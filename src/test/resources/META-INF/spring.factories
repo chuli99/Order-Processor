@@ -1,1 +1,1 @@
-org.springframework.test.context.ContextCustomizerFactory = um.ar.prog.config.TestContainersSpringContextCustomizerFactory
+org.springframework.test.context.ContextCustomizerFactory = ar.progamacion.julian.config.TestContainersSpringContextCustomizerFactory

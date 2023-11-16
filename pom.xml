@@ -5,7 +5,7 @@
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>um.ar.prog</groupId>
+    <groupId>ar.progamacion.julian</groupId>
     <artifactId>order-processor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -34,7 +34,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <start-class>um.ar.prog.OrderProcessorApp</start-class>
+        <start-class>ar.progamacion.julian.OrderProcessorApp</start-class>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx1G</argLine>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
@@ -982,7 +982,7 @@
                                 <defaultSchemaName>OrderProcessor</defaultSchemaName>
                                 <username>root</username>
                                 <password></password>
-                                <referenceUrl>hibernate:spring:um.ar.prog.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                                <referenceUrl>hibernate:spring:ar.progamacion.julian.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
                                 <contexts>!test</contexts>
@@ -1077,7 +1077,7 @@
                                 <defaultSchemaName>OrderProcessor</defaultSchemaName>
                                 <username>root</username>
                                 <password></password>
-                                <referenceUrl>hibernate:spring:um.ar.prog.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                                <referenceUrl>hibernate:spring:ar.progamacion.julian.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
                                 <contexts>!test</contexts>

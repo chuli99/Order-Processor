@@ -18,7 +18,7 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    um.ar.prog: DEBUG
+    ar.progamacion.julian: DEBUG
 
 eureka:
   instance:
@@ -50,7 +50,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/OrderProcessor?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: Jsp21Ny07
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -118,7 +118,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: ODZiNzU0MTM1NzEwZDMwMTEwZWRkYjlhZmFhYmY1MmIxZDljYzQ4NTZiZDI4MWMyOGYyNDhmM2Q1YjQzMTM2NTNhZjZmNmI0NDg4OTlmZmNkYzVlNWRkMTAwMTY0MWI3NDRiNGJmMDFhZTUwNzRjY2ZhMDc0ZjI5OGFjZTU0OWQ=
+        base64-secret: MTZmNmVkMTE0NmVjNDg0M2I1YmRiNjUwMTIzMGU5NjU5OGE2ZGNmMmQ4ZTVlMWZkYzU1MTFhZDdhOGMwYzg5MzY4MWY3NzFlMjgwMmJhMTc5YTdiNjk4OTZjNjNkN2ZiYzg1NmQ4OWQ0ZTQxZmRiNGYxODgwOTQ5N2RiN2ViZDg=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
