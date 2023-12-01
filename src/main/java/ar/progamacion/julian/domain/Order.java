@@ -1,6 +1,9 @@
 package ar.progamacion.julian.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
@@ -18,7 +21,8 @@ public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
     private Long id;
 
@@ -41,7 +45,7 @@ public class Order implements Serializable {
     private Integer cantidad;
 
     @Column(name = "fecha_operacion")
-    private ZonedDateTime fechaOperacion;
+    private Instant fechaOperacion;
 
     @Column(name = "modo")
     private String modo;
@@ -139,16 +143,16 @@ public class Order implements Serializable {
         this.cantidad = cantidad;
     }
 
-    public ZonedDateTime getFechaOperacion() {
+    public Instant getFechaOperacion() {
         return this.fechaOperacion;
     }
 
-    public Order fechaOperacion(ZonedDateTime fechaOperacion) {
+    public Order fechaOperacion(Instant fechaOperacion) {
         this.setFechaOperacion(fechaOperacion);
         return this;
     }
 
-    public void setFechaOperacion(ZonedDateTime fechaOperacion) {
+    public void setFechaOperacion(Instant fechaOperacion) {
         this.fechaOperacion = fechaOperacion;
     }
 
